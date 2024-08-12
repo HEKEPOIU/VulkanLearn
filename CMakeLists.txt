@@ -13,3 +13,4 @@ add_executable(${PROJECT_NAME} src/main.cpp)
 
 target_include_directories(${PROJECT_NAME} SYSTEM PRIVATE thridparty/glfw/include thridparty/glm/glm)
 target_link_libraries(${PROJECT_NAME} glfw ${GLFW_LIBRARIES} Vulkan::Vulkan glm)
+target_compile_definitions(${PROJECT_NAME} PRIVATE Root_DIR="${CMAKE_CURRENT_SOURCE_DIR}/")
