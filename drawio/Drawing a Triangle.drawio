@@ -1,0 +1,67 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (X11; Linux x86_64; rv:129.0) Gecko/20100101 Firefox/129.0" version="24.7.6">
+  <diagram name="Page-1" id="twdWLMF4oNI48kuwnJyi">
+    <mxGraphModel dx="2152" dy="816" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="-isOwaZ9NXmAcbayoN3J-5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="-isOwaZ9NXmAcbayoN3J-2" target="-isOwaZ9NXmAcbayoN3J-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="-isOwaZ9NXmAcbayoN3J-2" value="CheckExtensionSupport" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="290" y="270" width="170" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="-isOwaZ9NXmAcbayoN3J-3" value="&lt;div&gt;Extension Is a plugin that base on vulkan,&lt;/div&gt;&lt;div&gt;&amp;nbsp;add additional function or enhance function to it.&lt;/div&gt;&lt;div&gt;&lt;br&gt;On here We just list all avavilable Extension.&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="-40" y="270" width="300" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="-isOwaZ9NXmAcbayoN3J-18" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="-isOwaZ9NXmAcbayoN3J-4" target="-isOwaZ9NXmAcbayoN3J-17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="-isOwaZ9NXmAcbayoN3J-4" value="InitWindow" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="315" y="425" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="-isOwaZ9NXmAcbayoN3J-6" value="&lt;div&gt;We Use glfw to create window.&lt;/div&gt;&lt;div&gt;In default glft create window and glfw context, &lt;br&gt;&lt;/div&gt;&lt;div&gt;but on vulkan, we create context self, so we need&lt;/div&gt;&lt;div&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;br&gt;glfwWindowHint(GLFW_CLIENT_API, GLFW_NO_API);&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;(and after we will use window to create surface.)&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="-50" y="400" width="320" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="-isOwaZ9NXmAcbayoN3J-11" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="-350" y="320" width="280" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="-isOwaZ9NXmAcbayoN3J-9" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="-isOwaZ9NXmAcbayoN3J-11">
+          <mxGeometry width="280" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="-isOwaZ9NXmAcbayoN3J-10" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="-isOwaZ9NXmAcbayoN3J-11">
+          <mxGeometry width="280" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="-isOwaZ9NXmAcbayoN3J-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="-isOwaZ9NXmAcbayoN3J-12" target="-isOwaZ9NXmAcbayoN3J-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="-isOwaZ9NXmAcbayoN3J-12" value="This call window" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="-510" y="280" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="-isOwaZ9NXmAcbayoN3J-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="-isOwaZ9NXmAcbayoN3J-14" target="-isOwaZ9NXmAcbayoN3J-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="-isOwaZ9NXmAcbayoN3J-14" value="And inner what display Is provide by surface" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="-660" y="455" width="270" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="-isOwaZ9NXmAcbayoN3J-17" value="" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="115" y="590" width="520" height="670" as="geometry" />
+        </mxCell>
+        <mxCell id="-isOwaZ9NXmAcbayoN3J-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="-isOwaZ9NXmAcbayoN3J-17" target="-isOwaZ9NXmAcbayoN3J-23">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="-isOwaZ9NXmAcbayoN3J-20" value="&lt;div&gt;InitVulkan&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="185" y="560" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="-isOwaZ9NXmAcbayoN3J-22" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://gpuopen.com/wp-content/uploads/2017/07/Vulkan-Diagram-568x1024.png;" vertex="1" parent="1">
+          <mxGeometry x="-650" y="1050" width="568" height="1024" as="geometry" />
+        </mxCell>
+        <mxCell id="-isOwaZ9NXmAcbayoN3J-23" value="createInstance" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="315" y="640" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="-isOwaZ9NXmAcbayoN3J-26" value="opengl are just giant stateMashine, &lt;br&gt;&lt;div&gt;and it have concept call &quot;context&quot;.&lt;/div&gt;&lt;div&gt;context save all of opengl state, &lt;br&gt;&lt;/div&gt;&lt;div&gt;include current bind object, color, lighting, all of rendering data save on it, and can treat as large struct.&lt;br&gt;&lt;/div&gt;&lt;br&gt;&lt;br&gt;&lt;div&gt;And on vulkan, it not that work.&lt;/div&gt;&lt;div&gt;It separate operation to different object,&amp;nbsp;&lt;/div&gt;&lt;div&gt;and If you want to change sometime, you can recreate that object and swap that.&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-380" y="630" width="380" height="180" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
