@@ -25,6 +25,12 @@
 const uint32_t WIDTH = 800;
 const uint32_t HEIGHT = 600;
 
+#ifdef NDEBUG
+const bool enableValidationLayers = false;
+#else
+const bool enableValidationLayers = true;
+#endif
+
 const std::vector<const char *> validationLayers = {
     "VK_LAYER_KHRONOS_validation",
 };
@@ -81,12 +87,6 @@ void DestroyDebugUtilsMessengerEXT(VkInstance instance,
     func(instance, debugMessenger, pAllocator);
   }
 }
-
-#ifdef NDEBUG
-const bool enableValidationLayers = false;
-#else
-const bool enableValidationLayers = true;
-#endif
 
 class HelloTriangleApplication {
 public:
@@ -526,8 +526,9 @@ private:
     }
   }
 
+  // Create the Device and Queue at same time.
   void createLogicalDevice() {
-
+  
     QueueFamilyIndices indices = findQueueFamilies(physicalDevice);
 
     std::vector<VkDeviceQueueCreateInfo> queueCreateInfos;
@@ -720,7 +721,8 @@ private:
           "validation layers requested, but not available!");
     }
 
-    VkApplicationInfo appInfo{};
+    // optional, but it may provide some useful information to the driver in order to optimize our specific application.
+    VkApplicationInfo appInfo{}; 
     appInfo.sType = VK_STRUCTURE_TYPE_APPLICATION_INFO;
     appInfo.pApplicationName = "Hello Triangle";
     appInfo.applicationVersion = VK_MAKE_API_VERSION(0, 1, 0, 0);
@@ -739,11 +741,15 @@ private:
     VkDebugUtilsMessengerCreateInfoEXT debugCreateInfo{};
 
     if (enableValidationLayers) {
+      // This part are for debug message in instance create,
+      // because VkDebugUtilsMessengerCreateInfoEXT use CreateDebugUtilsMessengerEXT() to create debug,
+      // and it need to pass vulkan instance.
+      // But in this point vulkan instance are not available, so pass to pNext to Debug the creation.
       createInfo.enabledLayerCount =
           static_cast<uint32_t>(validationLayers.size());
       createInfo.ppEnabledLayerNames = validationLayers.data();
       populateDebugMessengerCreateInfo(debugCreateInfo);
-      createInfo.pNext = (VkDebugUtilsMessengerCreateInfoEXT *)&debugCreateInfo;
+      createInfo.pNext = (VkDebugUtilsMessengerCreateInfoEXT *)&debugCreateInfo; //This casting are not need, but for more clearly.
     } else {
       createInfo.enabledLayerCount = 0;
       createInfo.pNext = nullptr;
@@ -751,7 +757,7 @@ private:
 
     VkResult result = vkCreateInstance(&createInfo, nullptr, &instance);
     if (result != VK_SUCCESS) {
-      throw std::runtime_error("Faild to create instance!");
+      throw std::runtime_error("Failed to create instance!");
     }
   }
 
@@ -811,8 +817,8 @@ private:
     const char **glfwExtensions;
     glfwExtensions = glfwGetRequiredInstanceExtensions(&glfwExtensionCount);
 
-    std::vector<const char *> extensions(glfwExtensions,
-                                         glfwExtensions + glfwExtensionCount);
+    std::vector<const char *> extensions(glfwExtensions, // Start pointer
+                                         glfwExtensions + glfwExtensionCount); //Last pointer.
 
     if (enableValidationLayers) {
       extensions.push_back(VK_EXT_DEBUG_UTILS_EXTENSION_NAME);
